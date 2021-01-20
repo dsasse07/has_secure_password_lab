@@ -1,0 +1,19 @@
+<h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+
+<% if flash[:messages] %>
+  <%= flash[:messages] %>
+  <hr>
+<% end %>
+
+<%= form_for @user, url: login_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit "Login" %>
+  Or <br>
+  <%= link_to "Register New User", new_user_path%>
+<% end %>
